@@ -1,0 +1,18 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Django Example</title>
+		<link rel="stylesheet" type="text/css" href="{% static "main.css" %}">
+	</head>
+	<body>
+		Hello {{ name }}
+
+		Let's Clarifai your file
+		<form form method="post" action="/result/" enctype="multipart/form-data">
+			{% csrf_token %}
+			<input id="file_upload" type="file" name="file" accept="image/*" >
+			<input id="smaller_btn" type="submit">
+		</form>
+	</body>
+</html>
